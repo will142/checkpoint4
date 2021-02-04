@@ -7,10 +7,13 @@ import SearchModule from "./SearchModule";
 
 
 function Global() {
+
+  const [list, setList] = useState([]);
+
   return (
     <div>
       <SearchModule />
-      <BookList />
+      <BookList list={list} setList={setList}/>
       <BookDetails />
     </div>
   );
