@@ -29,4 +29,8 @@
     .bookList-container {
         width: 100%;
     }
+
+    .book-container {
+        width: 40%;
+    }
 }
