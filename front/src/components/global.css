@@ -1,4 +1,6 @@
 .global-container {
+    background-image: url("https://cdnb.artstation.com/p/assets/images/images/021/832/937/large/maxime-colome-colome-maxime.jpg?1573112190");
+    background-size: cover;
     width: 100%;
     min-height: 100vh;
     display: flex;
