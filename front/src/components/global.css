@@ -3,3 +3,10 @@
     min-height: 100vh;
     display: flex;
 }
+
+@media screen and (max-width: 900px) {
+    .global-container {
+      flex-direction: column;
+    }
+}
+  
