@@ -2,7 +2,7 @@
 CREATE TABLE IF NOT EXISTS `checkpoint4`.`book` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `synopsis` TINYTEXT NOT NULL,
+  `synopsis` MEDIUMTEXT NOT NULL,
   `media` VARCHAR(255) NULL,
   `id_author` INT NOT NULL,
   `chapters` VARCHAR(45) NULL,
