@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import "./booklist.css";
 
 
-function BookList({list, setList}) {
+
+function BookList({list, setbookDisplayed}) {
 
   return (
     <div className="bookList-container">
       {
-        list.map((book) => {
-          <div className="book-container">
-            <h1>{book.name}</h1>
-            <img src={book.media} />
-            <button>view +</button>
+        list.map((book) => (
+          <div key={book.id} className="book-container">
+            <h3>{book.name}</h3>
+            <img src={book.media} alt={book.id}/>
+            <button onClick={() => {
+              setbookDisplayed(book)
+            }}>view +</button>
           </div>
-        })
+        ))
       }
     </div>
   );

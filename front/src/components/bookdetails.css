@@ -1,0 +1,23 @@
+.bookdetails-globalContainer {
+    text-align: center;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.bookdetails-globalContainer img {
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .bookdetails-globalContainer {
+        align-items: center;
+        padding-bottom: 2%;
+        width: 100%;
+    }
+
+    .bookdetails-globalContainer img {
+        width: 80%;
+    }
+}
