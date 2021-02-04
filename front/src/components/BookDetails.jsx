@@ -30,11 +30,13 @@ function BookDetails({ book }) {
       <img src={book.media} alt={book.id} />
       <h3>author : {author[0].name}</h3>
       <h3>Chapters available : {book.chapters}</h3>
-      {
-        categoriesList.map((categorie) => (
-          <p key={categorie.name}>{categorie.name}</p>
-        ))
-      }
+      <div>
+        {
+          categoriesList.map((categorie) => (
+            <p key={categorie.name}>{categorie.name}</p>
+          ))
+        }
+      </div>
       <p>{book.synopsis}</p>
     </div>
   );

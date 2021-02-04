@@ -1,4 +1,6 @@
 .bookdetails-globalContainer {
+    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    background-color: white;
     text-align: center;
     width: 30%;
     display: flex;

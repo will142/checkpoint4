@@ -5,8 +5,6 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    background-image: url("https://cdnb.artstation.com/p/assets/images/images/021/832/937/large/maxime-colome-colome-maxime.jpg?1573112190");
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -15,13 +13,16 @@
     padding: 2%;
     font-size: small;
     color: white;
-    text-shadow:0 0 3px black;
+    text-shadow:0 0 3px white;
     text-align: center;
     display: flex;
     flex-direction: column;
-    /*justify-content: space-evenly;*/
     width: 25%;
-    /*height: 200px;*/
+}
+
+.book-container h3{
+    width: 100%;
+    background-color: black;
 }
 
 @media screen and (max-width: 900px) {

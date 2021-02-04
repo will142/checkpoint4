@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./admin.css";
+
 
 
 function Admin() {
@@ -45,51 +47,50 @@ function Admin() {
       media: media,
       id_author: id_author,
       chapters: chapters
-  };
+    };
     console.log(data);
     axios.post("http://localhost:8000/api/books", data);
   }
 
   return (
-    <div>
+    <div className="admin-globalContainer">
       <h1>Admin</h1>
-      <div>
-        <h2>Add author</h2>
-        <label>author name  : </label>
+      <div className="admin-book-globalContainer">
+        <h2 >Add author</h2>
         <input id="admin-input-author"></input>
         <button onClick={() => {
           const author = document.getElementById("admin-input-author").value;
           handleClickAddAuthor(author);
         }}>add</button>
       </div>
-      <div>
-      <h2>Add category</h2>
-        <label>category name  : </label>
+      <div className="admin-book-globalContainer">
+        <h2>Add category</h2>
         <input id="admin-input-category"></input>
         <button onClick={() => {
           const author = document.getElementById("admin-input-category").value;
           handleClickCategories(author);
         }}>add</button>
       </div>
-      <div>
-      <h2>Add Book</h2>
+      <div className="admin-book-globalContainer">
+        <h2>Add Book</h2>
         <label>book name  : </label>
         <input id="admin-input-book-name" onChange={() => {
-          const name =  document.getElementById("admin-input-book-name").value;
+          const name = document.getElementById("admin-input-book-name").value;
           setName(name);
         }}></input>
         <label>book synopsis  : </label>
         <textarea id="admin-input-book-synopsis" onChange={() => {
-          const synopsis =  document.getElementById("admin-input-book-synopsis").value;
+          const synopsis = document.getElementById("admin-input-book-synopsis").value;
           setSynopsis(synopsis);
         }}></textarea>
         <label>book image  : </label>
         <input id="admin-input-book-media" onChange={() => {
-          const media =  document.getElementById("admin-input-book-media").value;
+          const media = document.getElementById("admin-input-book-media").value;
           setMedia(media);
         }}></input>
+        <label>author  : </label>
         <select id="admin-input-book-author" onChange={() => {
-          const id_author =  document.getElementById("admin-input-book-author").value;
+          const id_author = document.getElementById("admin-input-book-author").value;
           setId_author(id_author);
         }}>
           {
@@ -100,11 +101,11 @@ function Admin() {
         </select>
         <label>book chapters  : </label>
         <input id="admin-input-book-chapters" onChange={() => {
-          const chapters =  document.getElementById("admin-input-book-chapters").value;
+          const chapters = document.getElementById("admin-input-book-chapters").value;
           setChapters(chapters);
         }}></input>
-        <button onClick={ async () => {
-           await handleClickBook();
+        <button onClick={async () => {
+          await handleClickBook();
         }}>add</button>
       </div>
     </div>

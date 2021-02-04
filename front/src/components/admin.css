@@ -1,0 +1,35 @@
+.admin-globalContainer {
+    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-book-globalContainer {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding:10px 0px 10px 0px;
+}
+
+.admin-book-globalContainer textarea {
+    width:50%;
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.admin-book-globalContainer input {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.admin-book-globalContainer select {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
