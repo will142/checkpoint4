@@ -32,7 +32,7 @@ router.get("/:id", (req,res) => {
 
 router.get("/name/:name", (req,res) => {
     const {name} = req.params;
-    const sql = "SELECT * FROM author WHERE name = ?";
+    const sql = "SELECT * FROM author AS a JOIN book ON a.id = id_author WHERE a.name = ?";
     connection.query(sql, [name] ,(err, result) => {
         if (err) {
             res.status(500).json({ errorMessage: err.message });

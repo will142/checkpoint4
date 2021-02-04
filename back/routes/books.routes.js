@@ -45,8 +45,6 @@ router.get("/name/:name", (req,res) => {
 
 router.get("/categories/:id", (req,res) => {
     const {id} = req.params;
-    /*const sql = "SELECT * FROM categoriesList AS c WHERE id_categories = ? JOIN b.name AS book_name, b.synopsis AS book_synopsis, b.media AS book_media, b.id_author AS book_author, b.chapters AS book_chapters FROM book AS b ON c.id_book = b.id";
-    */
     const sql = "SELECT * FROM categoriesList AS c JOIN book AS b ON c.id_book = b.id WHERE c.id_categories = ?";
     connection.query(sql, [id] ,(err, result) => {
         if (err) {

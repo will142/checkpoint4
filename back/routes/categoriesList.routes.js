@@ -18,7 +18,7 @@ router.get("/", (req,res) => {
 
 router.get("/:id", (req,res) => {
     const {id} = req.params;
-    const sql = "SELECT * FROM categoriesList WHERE id_book = ?";
+    const sql = "SELECT * FROM categoriesList AS l JOIN categories AS c ON l.id_categories = c.id WHERE l.id_book = ?";
     connection.query(sql, [id] ,(err, result) => {
         if (err) {
             res.status(500).json({ errorMessage: err.message });

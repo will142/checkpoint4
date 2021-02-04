@@ -1,0 +1,21 @@
+.bookList-container{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-image: url("https://i.pinimg.com/originals/98/b6/7f/98b67fa434d5b58ee4412c9bce59d462.jpg");
+    background-size: cover;
+}
+
+.book-container {
+    background-color: rgba(255,204,51,0.5);
+    padding: 2%;
+    font-size: small;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 25%;
+    height: 200px;
+}

@@ -1,0 +1,11 @@
+.bookdetails-globalContainer {
+    text-align: center;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.bookdetails-globalContainer img {
+    width: 100%;
+}
