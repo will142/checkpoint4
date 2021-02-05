@@ -7,6 +7,9 @@ import "./admin.css";
 function Admin() {
 
   const [listAuthor, setListAuthor] = useState([]);
+  const [listBook, setListBook] = useState([]);
+  const [listCategories, setListCategories] = useState([]);
+
 
   const [name, setName] = useState("")
   const [synopsis, setSynopsis] = useState("");
@@ -50,6 +53,32 @@ function Admin() {
     };
     console.log(data);
     axios.post("http://localhost:8000/api/books", data);
+  }
+
+  const handleClickDelete = () => {
+    axios
+      .get(`http://localhost:8000/api/books`)
+      .then((result) => result.data)
+      .then((list) => {
+        axios
+          .get(`http://localhost:8000/api/categories`)
+          .then((result) => result.data)
+          .then((data) => {
+            setListBook(list);
+            setListCategories(data);
+            const deleteSection = document.getElementById("delete-globalContainer");
+            deleteSection.style.display = "flex";
+            
+          });
+      });
+    }
+    
+  const handleClickDeleteBook = (id) => {
+    axios.delete(`http://localhost:8000/api/books/${id}`);
+  }
+
+  const handleClickDeleteCat = (id) => {
+    axios.delete(`http://localhost:8000/api/categories/${id}`);
   }
 
   return (
@@ -104,9 +133,30 @@ function Admin() {
           const chapters = document.getElementById("admin-input-book-chapters").value;
           setChapters(chapters);
         }}></input>
-        <button onClick={async () => {
-          await handleClickBook();
+        <button onClick={ () => {
+          handleClickBook();
         }}>add</button>
+        <button  id="button-delete-section" onClick={ () => {
+          handleClickDelete();
+        }}>Delete section display/actualise</button>
+      </div>
+      <div id="delete-globalContainer">
+        <h2 >Delete Book</h2>
+          {
+            listBook.map((book) => (
+              <button onClick={ () => {
+                handleClickDeleteBook(book.id);
+              }}>DELETE {book.name}</button>
+            ))
+          }
+          <h2 >Delete Categories</h2>
+          {
+            listCategories.map((cat) => (
+              <button onClick={ () => {
+                handleClickDeleteCat(cat.id);
+              }}>DELETE {cat.name}</button>
+            ))
+          }
       </div>
     </div>
   );
