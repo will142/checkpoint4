@@ -37,7 +37,7 @@ function BookDetails({ book }) {
           ))
         }
       </div>
-      <p>{book.synopsis}</p>
+      <p className="bookdetails-synopsis">{book.synopsis}</p>
     </div>
   );
 }

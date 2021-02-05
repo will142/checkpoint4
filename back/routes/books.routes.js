@@ -81,5 +81,33 @@ router.post("/", (req, res) => {
 });
 
 
+router.delete("/:id", (req, res) => {
+    const {id} = req.params;
+    const sql = "DELETE FROM categoriesList WHERE id_book = ?";
+    connection.query(sql, [id], (err, result) => {
+      if (err) {
+        res.status(500).json({ errorMessage: err.message });
+      } else if(result.length) {
+        const sql2 = "DELETE FROM book WHERE id = ?"
+        connection.query(sql2, [id], (errOne, resultOne) => {
+            if (err) {
+              res.status(500).json({ errorMessage: errOne.message });
+            } else {
+              res.status(200).json(resultOne);
+            }
+        })
+      } else {
+        const sql2 = "DELETE FROM book WHERE id = ?"
+        connection.query(sql2, [id], (errOne, resultOne) => {
+            if (err) {
+              res.status(500).json({ errorMessage: errOne.message });
+            } else {
+              res.status(200).json(resultOne);
+            }
+        })
+      }
+  })
+});
+
 
 module.exports = router;

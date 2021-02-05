@@ -13,6 +13,11 @@
     align-self: center;
 }
 
+.bookdetails-synopsis {
+    width: 90%;
+    align-self: center;
+}
+
 @media screen and (max-width: 900px) {
     .bookdetails-globalContainer {
         align-items: center;

@@ -33,3 +33,21 @@
     margin-bottom: 20px;
 
 }
+
+#delete-globalContainer {
+    align-items: center;
+    text-align: center;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+#delete-globalContainer button {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+#button-delete-section {
+    margin-top: 20px;
+    padding: 10px;
+}
